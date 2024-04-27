@@ -73,17 +73,14 @@ const FormLayout = ({ children, setPageType, pageType }: Props) => {
         <Flex
           w={['48px', '56px']}
           h={['48px', '56px']}
-          bg={'myGray.25'}
           borderRadius={'xl'}
-          borderWidth={'1.5px'}
-          borderColor={'borderColor.base'}
           alignItems={'center'}
           justifyContent={'center'}
         >
-          <Image src={LOGO_ICON} w={'24px'} alt={'icon'} />
+          <Image src={LOGO_ICON} w={'48px'} alt={'icon'} />
         </Flex>
         <Box ml={3} fontSize={['2xl', '3xl']} fontWeight={'bold'}>
-          {feConfigs?.systemTitle}
+          钻时神笔AI
         </Box>
       </Flex>
       {children}

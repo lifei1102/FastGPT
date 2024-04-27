@@ -3,7 +3,7 @@
     "lafEnv": "https://laf.dev"
   },
   "systemEnv": {
-    "openapiPrefix": "fastgpt",
+    "openapiPrefix": "shenbi",
     "vectorMaxProcess": 15,
     "qaMaxProcess": 15,
     "pgHNSWEfSearch": 100
@@ -33,7 +33,7 @@
       "defaultConfig": {}
     },
     {
-      "model": "gpt-4-0125-preview",
+      "model": "gpt-4-turbo",
       "name": "gpt-4-turbo",
       "avatar": "/imgs/model/openai.svg",
       "maxContext": 125000,
@@ -71,6 +71,29 @@
       "usedInExtractFields": false,
       "usedInToolCall": false,
       "usedInQueryExtension": false,
+      "toolChoice": true,
+      "functionCall": false,
+      "customCQPrompt": "",
+      "customExtractPrompt": "",
+      "defaultSystemChatPrompt": "",
+      "defaultConfig": {}
+    },
+    {
+      "model": "claude-3-haiku-20240307",
+      "name": "claude-haiku",
+      "avatar": "/imgs/model/openai.svg",
+      "maxContext": 125000,
+      "maxResponse": 4000,
+      "quoteMaxToken": 100000,
+      "maxTemperature": 1.2,
+      "charsPointsPrice": 0,
+      "censor": false,
+      "vision": false,
+      "datasetProcess": false,
+      "usedInClassify": true,
+      "usedInExtractFields": true,
+      "usedInToolCall": true,
+      "usedInQueryExtension": true,
       "toolChoice": true,
       "functionCall": false,
       "customCQPrompt": "",

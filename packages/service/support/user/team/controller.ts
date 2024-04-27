@@ -9,7 +9,7 @@ import { MongoTeamMember } from './teamMemberSchema';
 import { MongoTeam } from './teamSchema';
 
 async function getTeamMember(match: Record<string, any>): Promise<TeamItemType> {
-  const tmb = (await MongoTeamMember.findOne(match).populate('teamId')) as TeamMemberWithTeamSchema;
+  let tmb = (await MongoTeamMember.findOne(match).populate('teamId')) as TeamMemberWithTeamSchema;
   if (!tmb) {
     return Promise.reject('member not exist');
   }
@@ -37,7 +37,8 @@ export async function getTmbInfoByTmbId({ tmbId }: { tmbId: string }) {
   }
   return getTeamMember({
     _id: new Types.ObjectId(String(tmbId)),
-    status: notLeaveStatus
+    status: 'active'
+    // status: notLeaveStatus
   });
 }
 

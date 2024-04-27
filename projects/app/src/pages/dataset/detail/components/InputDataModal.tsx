@@ -249,7 +249,7 @@ const InputDataModal = ({
                 return openConfirm(onDeleteData)();
               }
               if (e === TabEnum.doc) {
-                return window.open(getDocPath('/docs/course/dataset_engine'), '_blank');
+                return window.open('https://docs.qq.com/doc/p/993a58901fd1c3e53a0749ef5513b3b38c568f23', '_blank');
               }
               setCurrentTab(e);
             }}

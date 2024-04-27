@@ -29,7 +29,7 @@ export async function getUserDetail({
     }
     return Promise.reject(ERROR_ENUM.unAuthorization);
   })();
-  const user = await MongoUser.findById(tmb.userId);
+  let user = await MongoUser.findById(tmb.userId);
 
   if (!user) {
     return Promise.reject(ERROR_ENUM.unAuthorization);

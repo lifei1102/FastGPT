@@ -36,13 +36,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 }
 
 const defaultFeConfigs: FastGPTFeConfigsType = {
-  show_emptyChat: true,
-  show_git: true,
-  docUrl: 'https://doc.fastgpt.in',
-  openAPIDocUrl: 'https://doc.fastgpt.in/docs/development/openapi',
-  systemTitle: 'FastGPT',
-  concatMd:
-    '项目开源地址: [FastGPT GitHub](https://github.com/labring/FastGPT)\n交流群: ![](https://oss.laf.run/htr4n1-images/fastgpt-qr-code.jpg)',
+  show_emptyChat: false,
+  show_git: false,
+  show_register: false,
+  docUrl: "https://docs.qq.com/doc/p/993a58901fd1c3e53a0749ef5513b3b38c568f23",
+  openAPIDocUrl: undefined,
+  systemTitle: '钻时神笔AI',
   limit: {
     exportDatasetLimitMinutes: 0,
     websiteSyncLimitMinuted: 0

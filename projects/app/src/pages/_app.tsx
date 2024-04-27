@@ -50,19 +50,21 @@ function App({ Component, pageProps }: AppProps) {
         feConfigs: { scripts, isPlus, show_git, systemTitle }
       } = await clientInitData();
 
-      setTitle(systemTitle || 'FastGPT');
+      console.log('app' + systemTitle );
+      // setTitle(systemTitle || '钻时神笔AI');
+      setTitle('钻时神笔AI');
 
       // log fastgpt
-      if (!isPlus) {
-        console.log(
-          '%cWelcome to FastGPT',
-          'font-family:Arial; color:#3370ff ; font-size:18px; font-weight:bold;',
-          `GitHub：https://github.com/labring/FastGPT`
-        );
-      }
-      if (show_git) {
-        loadGitStar();
-      }
+      // if (!isPlus) {
+      //   console.log(
+      //     '%cWelcome to 钻时神笔AI',
+      //     'font-family:Arial; color:#3370ff ; font-size:18px; font-weight:bold;',
+      //   );
+      // }
+      // if (show_git) {
+      //   loadGitStar();
+      // }
+
 
       setScripts(scripts || []);
       setInitd();
@@ -105,7 +107,7 @@ function App({ Component, pageProps }: AppProps) {
         <title>{title}</title>
         <meta
           name="description"
-          content={`${title} 是一个大模型应用编排系统，提供开箱即用的数据处理、模型调用等能力，可以快速的构建知识库并通过 Flow 可视化进行工作流编排，实现复杂的知识库场景！`}
+          content={`${title} 是企业级知识库 + 大模型流程编排的企业级产品！`}
         />
         <meta
           name="viewport"

@@ -109,7 +109,17 @@ export const useSystemStore = create<State>()(
           });
         },
 
-        feConfigs: {},
+        feConfigs: {
+            show_emptyChat: false,
+            show_git: false,
+            docUrl: undefined,
+            systemTitle: '钻时神笔AI',
+            chatbotUrl: undefined,
+            openAPIDocUrl: undefined,
+
+
+
+        },
         subPlans: undefined,
         systemVersion: '0.0.0',
         llmModelList: [],

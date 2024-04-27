@@ -163,34 +163,19 @@ const Navbar = ({ unread }: { unread: number }) => {
           </Link>
         </Box>
       )}
-      {(feConfigs?.docUrl || feConfigs?.chatbotUrl) && (
-        <MyTooltip label={t('common.system.Use Helper')} placement={'right-end'}>
-          <Link
-            {...itemStyles}
-            {...hoverStyle}
-            href={feConfigs?.chatbotUrl || getDocPath('/docs/intro')}
-            target="_blank"
-            mb={0}
-            color={'myGray.500'}
-          >
-            <MyIcon name={'common/courseLight'} width={'24px'} height={'24px'} />
-          </Link>
-        </MyTooltip>
-      )}
-      {feConfigs?.show_git && (
-        <MyTooltip label={`Git Star: ${gitStar}`} placement={'right-end'}>
-          <Link
-            as={NextLink}
-            href="https://github.com/labring/FastGPT"
-            target={'_blank'}
-            {...itemStyles}
-            {...hoverStyle}
-            mt={0}
-            color={'myGray.500'}
-          >
-            <MyIcon name={'common/gitInlight'} width={'26px'} height={'26px'} />
-          </Link>
-        </MyTooltip>
+      {(
+          <MyTooltip label={t('common.system.Use Helper')} placement={'right-end'}>
+            <Link
+                {...itemStyles}
+                {...hoverStyle}
+                href={'https://docs.qq.com/doc/p/993a58901fd1c3e53a0749ef5513b3b38c568f23'}
+                target="_blank"
+                mb={0}
+                color={'myGray.500'}
+            >
+              <MyIcon name={'common/courseLight'} width={'24px'} height={'24px'} />
+            </Link>
+          </MyTooltip>
       )}
     </Flex>
   );

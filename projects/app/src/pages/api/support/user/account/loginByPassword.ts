@@ -6,6 +6,7 @@ import { connectToDatabase } from '@/service/mongo';
 import { getUserDetail } from '@fastgpt/service/support/user/controller';
 import type { PostLoginProps } from '@fastgpt/global/support/user/api.d';
 import { UserStatusEnum } from '@fastgpt/global/support/user/constant';
+import {MongoTeamMember} from "@fastgpt/service/support/user/team/teamMemberSchema";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   try {
@@ -15,7 +16,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     if (!username || !password) {
       throw new Error('缺少参数');
     }
-
     // 检测用户是否存在
     const authCert = await MongoUser.findOne(
       {
@@ -35,7 +35,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       username,
       password
     });
-
     if (!user) {
       throw new Error('密码错误');
     }

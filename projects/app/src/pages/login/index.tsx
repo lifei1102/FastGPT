@@ -76,7 +76,7 @@ const Login = () => {
       <Flex
         alignItems={'center'}
         justifyContent={'center'}
-        bg={`url('/icon/login-bg.svg') no-repeat`}
+        bg={`url('/icon/login-bg.png') no-repeat`}
         backgroundSize={'cover'}
         userSelect={'none'}
         h={'100%'}
@@ -85,7 +85,7 @@ const Login = () => {
         <Flex
           flexDirection={'column'}
           w={['100%', 'auto']}
-          h={['100%', '700px']}
+          h={['100%', '500px']}
           maxH={['100%', '90vh']}
           bg={'white'}
           px={['5vw', '88px']}
@@ -97,25 +97,14 @@ const Login = () => {
           ]}
         >
           <Box w={['100%', '380px']} flex={'1 0 0'}>
-            {pageType ? (
-              <DynamicComponent type={pageType} />
-            ) : (
-              <Center w={'full'} h={'full'} position={'relative'}>
-                <Loading fixed={false} />
-              </Center>
-            )}
+              {pageType ? (
+                  <DynamicComponent type={pageType} />
+              ) : (
+                  <Center w={'full'} h={'full'} position={'relative'}>
+                      <Loading fixed={false} />
+                  </Center>
+              )}
           </Box>
-          {feConfigs?.concatMd && (
-            <Box
-              mt={8}
-              color={'primary.700'}
-              cursor={'pointer'}
-              textAlign={'center'}
-              onClick={onOpen}
-            >
-              无法登录，点击联系
-            </Box>
-          )}
         </Flex>
 
         {isOpen && <CommunityModal onClose={onClose} />}

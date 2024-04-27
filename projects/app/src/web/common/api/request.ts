@@ -100,17 +100,17 @@ function responseError(err: any) {
   }
   // 有报错响应
   if (err?.code in TOKEN_ERROR_CODE) {
+    console.log(err);
     clearToken();
-
-    if (
-      !(window.location.pathname === '/chat/share' || window.location.pathname === '/chat/team')
-    ) {
-      window.location.replace(
-        `/login?lastRoute=${encodeURIComponent(location.pathname + location.search)}`
-      );
-    }
-
-    return Promise.reject({ message: '无权操作' });
+    // if (
+    //   !(window.location.pathname === '/chat/share' || window.location.pathname === '/chat/team')
+    // ) {
+    //   window.location.replace(
+    //     `/login?lastRoute=${encodeURIComponent(location.pathname + location.search)}`
+    //   );
+    // }
+    //
+    // return Promise.reject({ message: '无权操作' });
   }
   if (err?.statusText === TeamErrEnum.aiPointsNotEnough) {
     useSystemStore.getState().setIsNotSufficientModal(true);
